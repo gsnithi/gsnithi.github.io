@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Flow Management System: a project concept for bringing operational workflows into a clearer, more manageable system.">
+  <title>Flow Management System | Nithi GS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:light;--ink:#111118;--muted:#595968;--purple:#7656f6;--line:#e7e6ed;--wash:#f6f4ff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;background:#fff}a{color:inherit}.wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+    header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.04em}header nav a{font-size:14px;text-decoration:none;color:var(--muted)}
+    .back{display:inline-flex;gap:8px;align-items:center;color:var(--purple);font-weight:600;text-decoration:none;font-size:14px;margin:48px 0 24px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;color:var(--purple);font-weight:700;font-size:12px}.hero{padding:10px 0 74px;max-width:800px}.hero h1{font-size:clamp(44px,7vw,76px);letter-spacing:-.07em;line-height:1.04;margin:16px 0}.hero h1 span{color:var(--purple)}.lead{font-size:clamp(18px,2.4vw,23px);line-height:1.5;color:var(--muted);max-width:700px}.visual{height:360px;border-radius:22px;background:radial-gradient(ellipse at 70% 22%,rgba(124,92,252,.45),transparent 40%),linear-gradient(135deg,#101827,#172e4a 55%,#111827);position:relative;overflow:hidden;display:grid;place-items:center}.visual:before,.visual:after{content:"";position:absolute;border:1px solid rgba(184,198,255,.25);border-radius:50%;width:420px;height:420px}.visual:after{width:260px;height:260px}.flow{z-index:1;display:flex;align-items:center;gap:15px;flex-wrap:wrap;justify-content:center;padding:20px}.node{padding:15px 20px;border:1px solid rgba(255,255,255,.3);border-radius:12px;background:rgba(255,255,255,.08);color:white;font-weight:600;box-shadow:0 10px 38px rgba(0,0,0,.2)}.arrow{color:#a99aff;font-size:24px}.content{display:grid;grid-template-columns:1.4fr .8fr;gap:70px;padding:64px 0}.content h2{font-size:30px;letter-spacing:-.04em;line-height:1.2;margin:0 0 16px}.content p{color:var(--muted);margin:0 0 18px}.aside{padding:26px;border-radius:18px;background:var(--wash);align-self:start}.aside h2{font-size:19px}.aside ul{padding-left:20px;margin:12px 0 0;color:var(--muted)}.aside li{margin:8px 0}.note{font-size:13px;border-top:1px solid #ded9fa;margin-top:24px;padding-top:16px;color:var(--muted)}.cta{padding:28px 32px;border-radius:18px;background:linear-gradient(110deg,#e9e3ff,#e2f0ff);display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:58px}.cta p{margin:4px 0 0;color:var(--muted)}.button{background:var(--ink);color:white;padding:11px 18px;border-radius:999px;text-decoration:none;font-weight:600;white-space:nowrap}footer{border-top:1px solid var(--line);padding:22px 0 36px;color:var(--muted);font-size:13px}
+    @media(max-width:700px){.content{grid-template-columns:1fr;gap:28px;padding:44px 0}.cta{align-items:flex-start;flex-direction:column}.hero{padding-bottom:42px}.back{margin-top:30px}.visual{height:300px}.flow{gap:7px}.node{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header><a class="brand" href="index.html">Nithi GS</a><nav><a href="index.html#projects">All projects</a></nav></header>
+    <a class="back" href="index.html#projects" aria-label="Back to selected projects">← Back to projects</a>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Project · Operations</div>
+        <h1>Flow Management System<span>.</span></h1>
+        <p class="lead">A project concept for bringing operational workflows into a clearer, more manageable system—from intake and ownership through completion.</p>
+      </section>
+      <div class="visual" role="img" aria-label="Illustration of work moving through a flow management process"><div class="flow"><span class="node">Intake</span><span class="arrow">→</span><span class="node">In progress</span><span class="arrow">→</span><span class="node">Complete</span></div></div>
+      <section class="content">
+        <div>
+          <h2>Clarity across the workflow</h2>
+          <p>The Flow Management System is presented as a place to organize work as it moves through an operational process. Its goal is to make the status and next step of work easier to understand.</p>
+          <p>The project can be tailored to the actual process, users, and technical implementation as those details are defined.</p>
+          <h2>Designed around the work</h2>
+          <p>A useful flow management experience starts with clear stages, visible ownership, and a simple way to track progress without losing sight of the larger operation.</p>
+        </div>
+        <aside class="aside">
+          <h2>At a glance</h2>
+          <ul><li><strong>Area:</strong> Operational workflow management</li><li><strong>Focus:</strong> Visibility and coordination</li><li><strong>Lifecycle:</strong> Intake · Progress · Completion</li></ul>
+          <p class="note">This page is a starter project overview; detailed features, technologies, and outcomes can be filled in when available.</p>
+        </aside>
+      </section>
+      <section class="cta"><div><strong>Want to see more?</strong><p>Explore the rest of Nithi's work and experience.</p></div><a class="button" href="index.html#projects">View all projects →</a></section>
+    </main>
+    <footer>© 2026 Nithi GS. Built with curiosity.</footer>
+  </div>
+</body>
+</html>
