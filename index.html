@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nithi GS — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --text-primary:#111118; --text-secondary:#525260; --accent-purple:#7c5cfc; --accent-green:#22c55e; --border-light:#e5e7eb; --bg-lavender:#eeecfc; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--text-primary); background:#fff; line-height:1.6; }
+        .container { max-width:1180px; margin:0 auto; padding:0 32px; }
+        .hero-wrapper { position:relative; overflow:hidden; background:linear-gradient(90deg,#fff 35%,rgba(255,255,255,.4) 55%,rgba(255,255,255,0) 100%),url('images/hero-skyline.jpg') right center/cover no-repeat; padding-bottom:96px; }
+        header { display:flex; justify-content:space-between; align-items:center; padding:28px 0; position:relative; z-index:10; }
+        .logo { font-weight:800; font-size:1.25rem; letter-spacing:-.02em; color:var(--text-primary); text-decoration:none; }
+        nav { display:flex; align-items:center; gap:28px; }
+        nav a { text-decoration:none; color:var(--text-primary); font-size:.9rem; font-weight:500; transition:opacity .2s; }
+        nav a:hover { opacity:.7; }
+        .btn-nav { background:var(--text-primary); color:#fff!important; padding:9px 18px; border-radius:999px; font-weight:600; }
+        .hero-content { padding-top:72px; max-width:580px; position:relative; z-index:10; }
+        .status-badge { display:inline-flex; align-items:center; gap:8px; background:#f3f4f6; padding:6px 14px; border-radius:999px; font-size:.85rem; font-weight:500; margin-bottom:24px; }
+        .status-dot { width:8px; height:8px; background:var(--accent-green); border-radius:50%; }
+        h1 { font-size:4.75rem; font-weight:800; letter-spacing:-.04em; line-height:1.05; margin-bottom:20px; }
+        .accent-dot { color:var(--accent-purple); }
+        .hero-subtitle { font-size:1.35rem; color:var(--text-secondary); line-height:1.45; margin-bottom:36px; max-width:480px; }
+        .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+        .btn-primary { background:var(--text-primary); color:#fff; text-decoration:none; padding:14px 26px; border-radius:999px; font-weight:600; font-size:.95rem; }
+        .btn-secondary { background:rgba(255,255,255,.85); color:var(--text-primary); text-decoration:none; padding:14px 26px; border-radius:999px; border:1px solid #d1d5db; font-weight:600; font-size:.95rem; }
+        section { padding:64px 0; }
+        .section-kicker { font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--accent-purple); margin-bottom:10px; display:block; }
+        h2 { font-size:2.35rem; font-weight:800; letter-spacing:-.03em; line-height:1.15; margin-bottom:16px; }
+        .about-grid { display:grid; grid-template-columns:310px 1fr 310px; gap:44px; align-items:center; }
+        .about-photo { width:100%; height:310px; object-fit:cover; border-radius:20px; background:#e5e7eb; display:block; }
+        .about-bio p { color:var(--text-secondary); font-size:1.05rem; margin-bottom:24px; }
+        .link-arrow { color:var(--accent-purple); font-weight:600; text-decoration:none; font-size:.95rem; }
+        .now-card { background:var(--bg-lavender); border-radius:20px; padding:28px; }
+        .now-header { display:flex; align-items:center; gap:10px; font-size:1.25rem; font-weight:700; margin-bottom:22px; }
+        .now-dot { width:9px; height:9px; background:var(--accent-purple); border-radius:50%; }
+        .now-item { display:flex; gap:14px; margin-bottom:18px; }
+        .now-item:last-child { margin-bottom:0; }
+        .now-icon { width:22px; height:22px; flex-shrink:0; margin-top:2px; }
+        .now-title { font-weight:700; font-size:.95rem; }
+        .now-meta { font-size:.82rem; color:var(--text-secondary); }
+        .projects-layout { display:grid; grid-template-columns:270px 1fr; gap:40px; align-items:start; }
+        .projects-intro p { color:var(--text-secondary); font-size:.98rem; margin-bottom:22px; }
+        .projects-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+        .project-card { border:1px solid var(--border-light); border-radius:14px; overflow:hidden; background:#fff; display:flex; flex-direction:column; }
+        .project-thumb { width:100%; height:150px; object-fit:cover; background:#0f172a; display:block; }
+        .project-body { padding:18px; display:flex; flex-direction:column; flex-grow:1; }
+        .project-title { font-weight:700; font-size:1.05rem; margin-bottom:6px; }
+        .project-footer { display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-top:auto; }
+        .project-desc { font-size:.85rem; color:var(--text-secondary); line-height:1.4; }
+        .circle-arrow { width:32px; height:32px; border-radius:50%; border:1px solid var(--border-light); display:inline-flex; align-items:center; justify-content:center; color:var(--text-primary); text-decoration:none; flex-shrink:0; }
+        .experience-layout { display:grid; grid-template-columns:270px 1fr; gap:40px; align-items:center; }
+        .timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+        .timeline-item { position:relative; }
+        .company-logo { height:32px; display:flex; align-items:center; margin-bottom:14px; font-weight:800; font-size:1.15rem; }
+        .timeline-bar { height:2px; background:#e5e7eb; position:relative; margin-bottom:14px; }
+        .timeline-dot { width:8px; height:8px; background:var(--accent-purple); border-radius:50%; position:absolute; top:-3px; left:0; }
+        .role-title { font-weight:700; font-size:.92rem; margin-bottom:2px; }
+        .role-meta { font-size:.82rem; color:var(--text-secondary); line-height:1.4; }
+        .connect-banner { background:linear-gradient(90deg,#e0dcfc,#d4e4fc 55%,#e5defc); border-radius:20px; padding:36px 44px; display:flex; justify-content:space-between; align-items:center; gap:24px; margin:32px 0 48px; }
+        .connect-left { display:flex; align-items:center; gap:22px; }
+        .paper-plane { width:36px; height:36px; flex-shrink:0; }
+        .connect-left h3 { font-size:1.5rem; font-weight:800; margin-bottom:4px; }
+        .connect-left p { color:var(--text-secondary); font-size:.95rem; }
+        .social-links { display:flex; gap:16px; }
+        .social-links a { color:var(--text-primary); width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; }
+        footer { display:flex; justify-content:space-between; align-items:center; padding:20px 0 40px; font-size:.82rem; color:#71717a; }
+        .back-to-top { width:36px; height:36px; border-radius:50%; background:#f3f4f6; color:var(--text-primary); display:inline-flex; align-items:center; justify-content:center; text-decoration:none; }
+        @media(max-width:1024px) { .about-grid{grid-template-columns:1fr}.about-photo{max-width:360px}.projects-layout,.experience-layout{grid-template-columns:1fr} }
+        @media(max-width:768px) { h1{font-size:3.25rem}.projects-cards{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(2,1fr)}.connect-banner{flex-direction:column;align-items:flex-start}nav a:not(.btn-nav){display:none} }
+    </style>
+</head>
+<body id="top">
+    <div class="hero-wrapper">
+        <div class="container">
+            <header>
+                <a href="#top" class="logo">Nithi GS</a>
+                <nav>
+                    <a href="#about">About</a><a href="#projects">Projects</a><a href="#blog">Blog</a><a href="#experience">Experience</a><a href="#connect" class="btn-nav">Let's Talk &rarr;</a>
+                </nav>
+            </header>
+            <div class="hero-content">
+                <div class="status-badge"><span class="status-dot"></span>Building with curiosity</div>
+                <h1>Hi, I'm Nithi<span class="accent-dot">.</span></h1>
+                <p class="hero-subtitle">Turning complex problems into simple, scalable solutions &mdash; with data, automation and AI.</p>
+                <div class="hero-actions"><a href="#projects" class="btn-primary">Explore My Work &rarr;</a><a href="#about" class="btn-secondary">About Me</a></div>
+            </div>
+        </div>
+    </div>
+    <main class="container">
+        <section id="about"><div class="about-grid">
+            <img src="images/about-mountain.jpg" alt="Looking out over mountains and pine forest" class="about-photo">
+            <div class="about-bio"><span class="section-kicker">About Me</span><h2>A builder at heart<span class="accent-dot">.</span></h2><p>I'm a Senior TPM at Amazon, passionate about automation, AI and building systems that scale. I'm on a journey to deepen my expertise in data science and create meaningful impact.</p><a href="#experience" class="link-arrow">Learn more about my journey &rarr;</a></div>
+            <aside class="now-card"><div class="now-header"><span class="now-dot"></span><span>Now</span></div>
+                <div class="now-item"><svg class="now-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><div><div class="now-title">Sr. TPM @ Amazon</div><div class="now-meta">Automation &bull; AI &bull; Scale</div></div></div>
+                <div class="now-item"><svg class="now-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><div><div class="now-title">Exploring Data Science</div><div class="now-meta">Python &bull; ML &bull; Cloud</div></div></div>
+                <div class="now-item"><svg class="now-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><div><div class="now-title">Outside of work</div><div class="now-meta">Family &bull; Travel &bull; Wellness</div></div></div>
+            </aside>
+        </div></section>
+        <section id="projects"><div class="projects-layout"><div class="projects-intro"><span class="section-kicker">Selected Projects</span><h2>Turning ideas into impact<span class="accent-dot">.</span></h2><p>Projects that showcase my skills in Python, data analytics and automation.</p><a href="#projects" class="link-arrow">View all projects &rarr;</a></div>
+            <div class="projects-cards">
+                <article class="project-card"><img src="images/project-flowbot.jpg" alt="FlowBot network visualization" class="project-thumb"><div class="project-body"><h3 class="project-title">FlowBot</h3><div class="project-footer"><p class="project-desc">An intelligent automation bot for operational workflows.</p><a href="#projects" class="circle-arrow" aria-label="View FlowBot">&rarr;</a></div></div></article>
+                <article class="project-card"><img src="images/project-forecasting.jpg" alt="Demand Forecasting chart" class="project-thumb"><div class="project-body"><h3 class="project-title">Demand Forecasting</h3><div class="project-footer"><p class="project-desc">Predicting resource demand with ML.</p><a href="#projects" class="circle-arrow" aria-label="View Demand Forecasting">&rarr;</a></div></div></article>
+                <article class="project-card"><img src="images/project-aws.jpg" alt="AWS Data Platform" class="project-thumb"><div class="project-body"><h3 class="project-title">AWS Data Platform</h3><div class="project-footer"><p class="project-desc">Scalable data pipelines on AWS.</p><a href="#projects" class="circle-arrow" aria-label="View AWS Data Platform">&rarr;</a></div></div></article>
+            </div>
+        </div></section>
+        <section id="experience"><div class="experience-layout"><div><span class="section-kicker">Experience</span><h2>A journey of continuous learning<span class="accent-dot">.</span></h2></div>
+            <div class="timeline">
+                <div class="timeline-item"><div class="company-logo" style="color:#c41f3e">CIBC &loz;</div><div class="timeline-bar"><span class="timeline-dot"></span></div><div class="role-title">Business Analyst</div><div class="role-meta">Toronto, ON<br>2015 &ndash; 2017</div></div>
+                <div class="timeline-item"><div class="company-logo" style="color:#0096d6;font-style:italic">hp</div><div class="timeline-bar"><span class="timeline-dot"></span></div><div class="role-title">Software Engineer</div><div class="role-meta">Singapore<br>2017 &ndash; 2020</div></div>
+                <div class="timeline-item"><div class="company-logo" style="color:#5e5e5e;font-weight:600">Microsoft</div><div class="timeline-bar"><span class="timeline-dot"></span></div><div class="role-title">Program Manager</div><div class="role-meta">Redmond, WA<br>2020 &ndash; 2022</div></div>
+                <div class="timeline-item"><div class="company-logo" style="color:#111118">amazon</div><div class="timeline-bar"><span class="timeline-dot"></span></div><div class="role-title">Sr. TPM</div><div class="role-meta">Toronto, ON<br>2022 &ndash; Present</div></div>
+            </div>
+        </div></section>
+        <section id="connect" style="padding:16px 0"><div class="connect-banner"><div class="connect-left"><svg class="paper-plane" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg><div><h3>Let's connect</h3><p>I'm always open to interesting conversations &mdash; whether it's on AI, data, or what's next.</p></div></div>
+            <div class="social-links"><a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.78 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a><a href="mailto:hello@nithigs.com" aria-label="Email"><svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a></div>
+        </div></section>
+        <footer><div>&copy; 2026 Nithi GS. Built with curiosity.</div><a href="#top" class="back-to-top" aria-label="Back to top">&uarr;</a></footer>
+    </main>
+</body>
+</html>
